@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block customcss %}
+<link rel="stylesheet" href="{% static 'style.css' %}">
+{% endblock customcss %}
+
+{% block content %}
+<body>
+        <div class="container" style="justify-content: center;">
+            <h1 class="h3 mb-3 font-weight-normal" style="text-align: center;"> {{ kwd }}</h1>
+            <p style="white-space: pre-line; margin: auto; line-height: 40px; max-width: 800px;">{{ sentences }}</p>
+            <div style="text-align: center; margin-top: 40px;">
+                <button type="button" class="btn btn-outline-success" onclick="location.href='http://127.0.0.1:8000/'" style="margin-top: 15px; margin: auto;">戻る</button>
+            </div>
+        </div>
+</body>
+{% endblock content %}

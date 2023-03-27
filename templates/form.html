@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load widget_tweaks %}
+{% block customcss %}
+<link rel="stylesheet" href="{% static 'style.css' %}">
+{% endblock customcss %}
+
+{% block content %}
+<body>
+    <form class="form-signin" method="POST">
+        {% csrf_token %}
+        <h1 class="h3 mb-3 font-weight-normal" style="text-align: center;"> Wikipediaを要約する</h1>
+        <label for="inputWiki" class="sr-only">キーワードを入力</label>
+        <div class="input-group">
+            <!-- <input type="text" class="form-control" placeholder="キーワードを入力"> -->
+            {% render_field form.kwd class='form-control' placeholder='キーワードを入力' %}
+            <button class="btn btn-outline-success" type="submit" id="button-addon2"><i class="fas fa-search"></i> 検索</button>
+        </div>
+        <div style="margin-top: 20px;">
+            <p style="text-align: center; color: gray; margin-left: auto; margin-right: auto;">要約に少し時間がかかります。</p>
+        </div>
+    </form>
+</body>
+{% endblock content %}
